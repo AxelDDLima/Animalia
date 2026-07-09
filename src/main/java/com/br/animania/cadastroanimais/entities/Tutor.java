@@ -1,0 +1,25 @@
+package com.br.animania.cadastroanimais.entities;
+
+import com.br.animania.cadastroanimais.dto.CadastroEnderecoDTO;
+import jakarta.persistence.*;
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name = "tb_tutor")
+public class Tutor {
+    private String nomeTutor;
+    private String telefoneTutor;
+
+    @OneToOne
+    @JoinColumn(name = "endereco_id")
+    private CadastroEnderecoDTO enderecoTutor;
+
+    @OneToOne(mappedBy = "tutorAnimal", cascade = CascadeType.ALL)
+    private Ave ave;
+    @OneToOne(mappedBy = "tutorAnimal", cascade = CascadeType.ALL)
+    private Mamifero mamifero;
+    @OneToOne(mappedBy = "tutorAnimal", cascade = CascadeType.ALL)
+    private Repteis repteis;
+
+}
