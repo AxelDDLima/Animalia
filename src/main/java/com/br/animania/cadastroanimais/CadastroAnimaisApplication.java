@@ -12,7 +12,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * -Lombok
  * -Openapi-ui
  * -liquibase
- * -
+ * -OpenFeign
  * @author Axel d. Lima
  */
 
