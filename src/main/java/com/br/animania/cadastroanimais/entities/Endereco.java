@@ -1,10 +1,19 @@
 package com.br.animania.cadastroanimais.entities;
 
-import jakarta.persistence.*;
+import com.br.animania.cadastroanimais.dto.CadastroEnderecoDTO;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.CascadeType;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "tb_endereco")
 public class Endereco {
     @Id
@@ -16,4 +25,10 @@ public class Endereco {
     @OneToOne(mappedBy = "enderecoTutor", cascade = CascadeType.ALL)
     private Tutor tutor;
 
+    public Endereco(CadastroEnderecoDTO dto) {
+        this.cep        = dto.getCep() ;
+        this.logradouro = dto.getLogradouro() ;
+        this.bairro     = dto.getBairro() ;
+        this.uf         = dto.getUf() ;
+    }
 }

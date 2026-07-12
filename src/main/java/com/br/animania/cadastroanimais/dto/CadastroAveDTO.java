@@ -1,10 +1,14 @@
 package com.br.animania.cadastroanimais.dto;
 
 import com.br.animania.cadastroanimais.entities.Ave;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class CadastroAveDTO extends CadastroAnimalDTO {
     private boolean isVoa;
@@ -12,12 +16,11 @@ public class CadastroAveDTO extends CadastroAnimalDTO {
 
     public CadastroAveDTO(Ave entity) {
         this.corPena = entity.getCorPena();
-        this.isVoa = entity.isVoa();
+        this.isVoa   = entity.isVoa();
         super.setNomeAnimal(entity.getNomeAnimal());
         super.setIdadeAnimal(entity.getIdadeAnimal());
         super.setTipoAnimal(entity.getTipoAnimal());
         super.setClassificacao(entity.getClassificacao());
         super.setTutorAnimal(entity.getTutorAnimal());
-
     }
 }

@@ -1,20 +1,31 @@
 package com.br.animania.cadastroanimais.entities;
 
-import jakarta.persistence.*;
+import com.br.animania.cadastroanimais.dto.CadastroTutorDTO;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.JoinColumn;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "tb_tutor")
 public class Tutor {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nomeTutor;
     private String telefoneTutor;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "endereco_id")
     private Endereco enderecoTutor;
 
@@ -25,4 +36,9 @@ public class Tutor {
     @OneToOne(mappedBy = "tutorAnimal", cascade = CascadeType.ALL)
     private Repteis repteis;
 
+    public Tutor(CadastroTutorDTO entity) {
+        this.nomeTutor     = entity.getNomeTutor();
+        this.telefoneTutor = entity.getTelefoneTutor();
+        this.enderecoTutor = new Endereco(entity.getEnderecoTutor());
+    }
 }
