@@ -1,6 +1,5 @@
 package com.br.animania.cadastroanimais.entities;
 
-import com.br.animania.cadastroanimais.dto.CadastroEnderecoDTO;
 import jakarta.persistence.*;
 import lombok.Data;
 
