@@ -1,10 +1,24 @@
 package com.br.animania.cadastroanimais.dto;
 
 import com.br.animania.cadastroanimais.entities.Tutor;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import lombok.Data;
 
+import java.util.Locale;
+
+@JsonTypeInfo(
+        use = JsonTypeInfo.Id.NAME,
+        include = JsonTypeInfo.As.PROPERTY,
+        property = "classificacao"
+)
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = CadastroAveDTO.class, name = "AVE"),
+        @JsonSubTypes.Type(value = CadastroMamiferoDTO.class, name = "Mamifero"),
+        @JsonSubTypes.Type(value = CadastroRepteisDTO.class, name = "Reptil")
+})
 @Data
-public class CadastroAnimalDTO {
+public abstract class CadastroAnimalDTO {
     private String nomeAnimal;
     private String idadeAnimal;
     private String tipoAnimal;
