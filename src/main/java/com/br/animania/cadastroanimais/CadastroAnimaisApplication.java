@@ -11,7 +11,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * -Banco de Dados H2
  * -Lombok
  * -Openapi-ui
- *
+ * -liquibase
+ * -
  * @author Axel d. Lima
  */
 
