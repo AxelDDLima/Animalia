@@ -1,4 +1,4 @@
-package com.br.animania.cadastroanimais.dto;
+package com.br.animania.cadastroanimais.dto.cadastro;
 
 import com.br.animania.cadastroanimais.entities.Repteis;
 import lombok.AllArgsConstructor;
@@ -19,6 +19,7 @@ public class CadastroRepteisDTO extends CadastroAnimalDTO {
         this.tipoEstruturaExterna = entity.getTipoEstruturaExterna();
         this.corDaEstrutura       = entity.getCorDaEstrutura();
         this.quantidadePatas      = entity.getQuantidadePatas();
+        super.setId(entity.getId());
         super.setNomeAnimal(entity.getNomeAnimal());
         super.setIdadeAnimal(entity.getIdadeAnimal());
         super.setTipoAnimal(entity.getTipoAnimal());

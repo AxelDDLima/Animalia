@@ -1,4 +1,4 @@
-package com.br.animania.cadastroanimais.dto;
+package com.br.animania.cadastroanimais.dto.cadastro;
 
 import com.br.animania.cadastroanimais.entities.Mamifero;
 import lombok.AllArgsConstructor;
@@ -17,6 +17,7 @@ public class CadastroMamiferoDTO extends CadastroAnimalDTO {
     public CadastroMamiferoDTO(Mamifero entity) {
         this.corPelo     = entity.getCorPelo();
         this.tamanhoPelo = entity.getTamanhoPelo();
+        super.setId(entity.getId());
         super.setNomeAnimal(entity.getNomeAnimal());
         super.setIdadeAnimal(entity.getIdadeAnimal());
         super.setTipoAnimal(entity.getTipoAnimal());
