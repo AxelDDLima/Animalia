@@ -48,11 +48,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-h2console</artifactId>
         </dependency>
-        <!-- Cliente HTTP declarativo para comunicação entre microsserviços -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
         <!-- Banco de dados em memória utilizado para desenvolvimento e testes -->
         <dependency>
             <groupId>com.h2database</groupId>
@@ -155,5 +150,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

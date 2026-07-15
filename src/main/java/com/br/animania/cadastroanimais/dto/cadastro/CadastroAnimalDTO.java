@@ -1,8 +1,9 @@
-package com.br.animania.cadastroanimais.dto;
+package com.br.animania.cadastroanimais.dto.cadastro;
 
 import com.br.animania.cadastroanimais.entities.Tutor;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,9 +23,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public abstract class CadastroAnimalDTO {
+    private long id;
     private String nomeAnimal;
     private String idadeAnimal;
     private String tipoAnimal;
+    @Schema(
+            example = "AVE",
+            allowableValues = {
+                    "AVE",
+                    "MAMIFERO",
+                    "REPTIL"
+            }
+    )
     private String classificacao;
     private CadastroTutorDTO tutorAnimal;
 

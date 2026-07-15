@@ -1,4 +1,4 @@
-package com.br.animania.cadastroanimais.dto;
+package com.br.animania.cadastroanimais.dto.cadastro;
 
 import com.br.animania.cadastroanimais.entities.Endereco;
 import lombok.AllArgsConstructor;

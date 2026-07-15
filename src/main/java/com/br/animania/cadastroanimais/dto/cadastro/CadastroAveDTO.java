@@ -1,4 +1,4 @@
-package com.br.animania.cadastroanimais.dto;
+package com.br.animania.cadastroanimais.dto.cadastro;
 
 import com.br.animania.cadastroanimais.entities.Ave;
 import lombok.AllArgsConstructor;
@@ -17,6 +17,7 @@ public class CadastroAveDTO extends CadastroAnimalDTO {
     public CadastroAveDTO(Ave entity) {
         this.corPena = entity.getCorPena();
         this.isVoa   = entity.isVoa();
+        super.setId(entity.getId());
         super.setNomeAnimal(entity.getNomeAnimal());
         super.setIdadeAnimal(entity.getIdadeAnimal());
         super.setTipoAnimal(entity.getTipoAnimal());

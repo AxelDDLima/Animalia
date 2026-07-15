@@ -1,6 +1,6 @@
 package com.br.animania.cadastroanimais.entities;
 
-import com.br.animania.cadastroanimais.dto.CadastroAveDTO;
+import com.br.animania.cadastroanimais.dto.cadastro.CadastroAveDTO;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
